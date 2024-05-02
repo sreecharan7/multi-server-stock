@@ -63,3 +63,8 @@ This project implements a real-time stock price update server using Node.js with
 Visit [http://localhost:3000](http://localhost:3000) in your web browser to access the website.
 
 for docker you can also acess at [http://localhost:3001](http://localhost:3001)
+
+
+- in this publisher it is not connected to real time stock trader instead used a random genering stock fluctualtion
+- you add more stocks at the /stock market sender/index.js (stockNames)
+- stock name should be without spaces
