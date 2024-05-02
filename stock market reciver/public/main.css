@@ -1,0 +1,47 @@
+#sortable { list-style-type: none; margin: 0; padding: 0; width: 70vw; }
+#sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 300px; height: 150px;}
+
+
+#container-main{
+    display: flex;
+    justify-content: space-around;   
+}
+
+#container-buttons{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* position: fixed; */
+}
+
+.stock-box{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+#cookie-buttons{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.close-button-div{
+    position: absolute;
+    border-radius: 50%;
+}
+.close-button{
+    border: none;
+    border-radius: 50%;
+    color: red;
+}
+
+@media screen and (max-width:600px) {
+    #container-main{
+        flex-direction: column-reverse;
+    }
+    #sortable{
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jquery-ui/jquery-ui.css">
+    <title>stocks</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div id="container-main">
+        <div>
+            <ul id="sortable">
+            </ul>
+        </div>
+
+        <div id="container-buttons">
+            <div class="ui-widget">
+                <label for="tags">stocks: </label>
+                <input id="tags">
+                <button onclick="addStock2()">add stock</button>
+            </div>
+            <div id="cookie-buttons">
+                <button onclick="clearData()">clear data</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dialog" title="stock" style="display: none;">
+        <p></p>
+    </div>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery-ui/jquery-ui.min.js"></script>
+    <script src="socket.io.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

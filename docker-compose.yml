@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  rediss:
+    image: redis
+    restart: always
+
+  reciver:
+    build:
+      context: ./stock market reciver
+    depends_on:
+      - rediss
+      - sender
+    ports:
+      - 3000:3000
+    environment:
+      REDIS: "redis://rediss:6379"
+      SENDER: "http://sender:5000"
+      PORT: 3000
+
+  sender:
+    build:
+      context: ./stock market sender
+    depends_on:
+      - rediss
+    environment:
+      REDIS: "redis://rediss:6379"
+      SPEED: 50
+      PORT: 5000
