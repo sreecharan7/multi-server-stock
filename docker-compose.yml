@@ -5,7 +5,7 @@ services:
     image: redis
     restart: always
 
-  reciver:
+  reciver1:
     build:
       context: ./stock market reciver
     depends_on:
@@ -13,6 +13,19 @@ services:
       - sender
     ports:
       - 3000:3000
+    environment:
+      REDIS: "redis://rediss:6379"
+      SENDER: "http://sender:5000"
+      PORT: 3000
+
+  reciver2:
+    build:
+      context: ./stock market reciver
+    depends_on:
+      - rediss
+      - sender
+    ports:
+      - 3001:3000
     environment:
       REDIS: "redis://rediss:6379"
       SENDER: "http://sender:5000"
