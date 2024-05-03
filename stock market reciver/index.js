@@ -28,6 +28,5 @@ app.get("/all-stocks",async (req,res)=>{
 await socket(server);
 
 
-server.listen(process.env.PORT||3000,()=>{
-    console.log("server is started at ",process.env.PORT||3000);
-})
+
+export default server;
