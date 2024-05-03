@@ -53,7 +53,7 @@ This project implements a real-time stock price update server using Node.js with
 1. **Configure Docker Environment Variables**
     After cloning, change the environment variables needs
 
-2. **Create Docker Volume**
+2. **Create Docker Compose**
     ```sh
     docker-compose up --build
     ```
