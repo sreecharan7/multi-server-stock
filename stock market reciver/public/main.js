@@ -58,7 +58,16 @@ const socket=io('/',{
 socket.on("stock-price",(arg)=>{
     arg=JSON.parse(arg);
     channgeStock(arg["stock"],arg["price"]);
-})
+});
+
+const cookieData = getCookie("stocksData");
+
+socket.on("connect",()=>{
+  if (cookieData) {
+    const parsedData = JSON.parse(cookieData);
+    addStockArr(parsedData,true);
+  }
+});
 
 function addStock(data){
     socket.emit("addStock",data,(responce)=>{
@@ -169,12 +178,7 @@ function getCookie(name) {
   return null;
 }
 
-const cookieData = getCookie("stocksData");
 
-if (cookieData) {
-    const parsedData = JSON.parse(cookieData);
-    addStockArr(parsedData,true);
-}
 
 function createCookie(name,data){
   data=JSON.stringify(data);
